@@ -174,7 +174,7 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   phi_old_modified[phi_old_modified==999] = 'nan'
 
   plt.figure(figsize=(3, 3))
-  plt.title("Ground Truth (Math Model Results)")
+  plt.title("Ground Truth \n(Math Model Results)")
   plt.imshow(phi_old_modified,cmap='jet',interpolation='nearest')
   plt.colorbar()
   plt.tight_layout()
