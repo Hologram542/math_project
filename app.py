@@ -1,7 +1,7 @@
 import streamlit as st
 with st.spinner('Importing functions'):
   from demo_client import generate_PINN_model
-  from math_model import generate_math_model
+  from math_model import generate_initial_model, generate_math_model
 
 
 def performance_func(pinn_time, math_time):
