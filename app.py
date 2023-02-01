@@ -48,7 +48,13 @@ def performance_func_ui(pinn_time, math_time):
     st.write("Time to generate math model") 
     st.write("{} milliseconds".format(str(math_time)))
 
-def accuracy_func_ui(pinn_time, math_time):
+def accuracy_func_ui(timsteps, pinn_time, math_time):
+
+  num_cols = (timsteps//100) + 2
+
+  
+  for col_num in range(1, num_cols + 1):
+    st.write(col_num)
 
   st.write('work in progress')
 
@@ -103,7 +109,7 @@ if accuracy_stimulation:
 
   pinn_model_time, math_model_time = 1, 2000
 
-  accuracy_func_ui(pinn_model_time, math_model_time)
+  accuracy_func_ui(time_step_dropdown, pinn_model_time, math_model_time)
 
 # If "RUN BOTH" is pressed
 if run_both:
