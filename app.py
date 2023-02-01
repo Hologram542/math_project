@@ -62,7 +62,7 @@ with but_col2:
 
 # If the "SPEED STIMULATION" is pressed
 if performance_stimulation:
-  st.markdown("""Time spent = {0}\nsource of pollution (cx, cy) = {1}, {2}\nu = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
   
   with st.spinner('Running function...'):
     pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
