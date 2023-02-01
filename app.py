@@ -9,7 +9,7 @@ def performance_func_ui(pinn_time, math_time):
   img_col1, img_col2, img_col3 = st.columns(3)
 
   with img_col1:
-    st.image('pinn model.png').
+    st.image('pinn model.png')
 
   with img_col2:
     st.image('pinn model.png')
