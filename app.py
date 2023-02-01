@@ -43,4 +43,4 @@ if speed_stimulation:
   pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
   st.image('pinn model.png')
   # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-  st.write("Time to generate PINN model - ", pinn_model_time)
+  st.write("Time to generate PINN model - {} milliseconds".format(str(pinn_model_time)))
