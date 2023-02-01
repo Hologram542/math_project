@@ -20,6 +20,8 @@ from sklearn.metrics import mean_squared_error
 import time
 from datetime import datetime
 
+import streamlit as st
+
 obs_file = "obstructions2d.csv"
 
 def scale(num,min,max):
@@ -34,6 +36,7 @@ def custom_loss_wrapper(obstructions):
     return loss
   return custom_loss
 
+@st.cache(show_spinner = False, allow_output_mutation = True)
 def generate_PINN_model(time, cx, cy,u,v):
   cx = scale(cx, 0, 100)
   cy = scale(cy, 0, 100)
