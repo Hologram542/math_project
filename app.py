@@ -10,7 +10,7 @@ def performance_func_ui(math_time, pinn_time):
   img_col1, img_col2, img_col3 = st.columns(3)
 
   with img_col1:
-    st.image('pinn model.png')
+    st.image('Initial condition.png')
 
   with img_col2:
     st.image('pinn model.png')
@@ -18,7 +18,7 @@ def performance_func_ui(math_time, pinn_time):
     st.write("{} milliseconds".format(str(pinn_time)))
 
   with img_col3:
-    st.image('pinn model.png')
+    st.image('math model.png')
     st.write("Time to generate math model") 
     st.write("{} milliseconds".format(str(math_time)))
 
