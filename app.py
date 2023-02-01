@@ -1,7 +1,9 @@
 import streamlit as st
 from datetime import datetime
-with st.spinner('Importing functions...'):
+with st.spinner('Importing data from "demo_client..."'):
   from demo_client import generate_PINN_model
+
+with st.spinner('Importing data from "math_model..."'):
   from math_model import generate_initial_model, generate_math_model
 
 
