@@ -137,7 +137,7 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   # SPECIFY THE VALUES FOR ALL VARIABLES HERE
 
   # load obstructions
-  obstructions = pd.read_csv(path+obs_file)
+  obstructions = pd.read_csv(obs_file)
   obstructions = obstructions.to_numpy()
 
   # load pollution source
