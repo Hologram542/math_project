@@ -108,7 +108,7 @@ def run_code(total_rows,total_columns,f, phi_old,obstructions, u, v, time_steps)
 
 def generate_initial_model(c_x, c_y, u, v, time_steps):
   # load obstructions
-  obstructions = pd.read_csv(path+obs_file)
+  obstructions = pd.read_csv(obs_file)
   obstructions = obstructions.to_numpy()
   # load pollution source
   total_rows, total_columns = obstructions.shape
