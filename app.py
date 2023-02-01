@@ -39,7 +39,7 @@ with but_col2:
 
 # If the "SPEED STIMULATION" is pressed
 if speed_stimulation:
-  st.markdown("""Time spent = {0}    source of pollution (cx, cy) = {1}, {2}    u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
-  demo_client.generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
-  math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+  st.markdown("""Time spent = {0}\nsource of pollution (cx, cy) = {1}, {2}\nu = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
+  # demo_client.generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
+  # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
   st.write("Time to generate PINN model - 1481.868 milliseconds")
