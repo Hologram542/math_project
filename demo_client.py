@@ -73,6 +73,7 @@ def generate_PINN_model(time, cx, cy,u,v):
   plt.imshow(Y_validation,cmap='jet',interpolation='nearest')
   plt.colorbar()
   plt.show()
+  plt.savefig('pinn model.png')
   return duration_ms
 
 #@title SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES (2D Advection Diffusion Pollution Spread Math Model and PINN) { vertical-output: true, form-width: "100%", display-mode: "form" }
