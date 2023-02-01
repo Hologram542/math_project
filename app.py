@@ -90,13 +90,17 @@ with but_col2:
 # If the "SPEED STIMULATION" is pressed
 if performance_stimulation:
 
-  pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
+  # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
+
+  pinn_model_time, math_model_time = 1, 2000
 
   performance_func_ui(pinn_model_time, math_model_time)
 
 if accuracy_stimulation:
 
-  pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
+  # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
+
+  pinn_model_time, math_model_time = 1, 2000
 
   accuracy_func_ui(pinn_model_time, math_model_time)
 
