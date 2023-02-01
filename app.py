@@ -87,7 +87,7 @@ with but_col2:
   accuracy_stimulation = st.button("RUN ACCURACY STIMULATION")
   clear_results = st.button("CLEAR RESULTS")
 
-# If the "SPEED STIMULATION" is pressed
+# If the "PERFORMANCE STIMULATION" is pressed
 if performance_stimulation:
 
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
@@ -96,6 +96,7 @@ if performance_stimulation:
 
   performance_func_ui(pinn_model_time, math_model_time)
 
+# If the "ACCURACY STIMULATION" is pressed
 if accuracy_stimulation:
 
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
@@ -104,6 +105,16 @@ if accuracy_stimulation:
 
   accuracy_func_ui(pinn_model_time, math_model_time)
 
+# If "RUN BOTH" is pressed
+if run_both:
 
+  # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
+  pinn_model_time, math_model_time = 1, 2000
 
+  performance_func_ui(pinn_model_time, math_model_time)
+  accuracy_func_ui(pinn_model_time, math_model_time)
+
+# If "CLEAR RESULTS" is pressed
+if clear_results:
+  st.write("Deleted")
