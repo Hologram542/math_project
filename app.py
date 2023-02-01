@@ -53,8 +53,9 @@ def accuracy_func_ui(timsteps, pinn_time, math_time):
   num_cols = (timsteps//100) + 2
 
   
-  for col_num in range(1, num_cols + 1):
-    st.write(col_num)
+  # for col_num in range(1, num_cols + 1):
+  #   globals()[f"variable1{col_num}"] = 
+    
 
   st.write('work in progress')
 
@@ -96,6 +97,8 @@ with but_col2:
 # If the "PERFORMANCE STIMULATION" is pressed
 if performance_stimulation:
 
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
+
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
   pinn_model_time, math_model_time = 1, 2000
@@ -104,6 +107,8 @@ if performance_stimulation:
 
 # If the "ACCURACY STIMULATION" is pressed
 if accuracy_stimulation:
+
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
 
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
@@ -114,6 +119,8 @@ if accuracy_stimulation:
 # If "RUN BOTH" is pressed
 if run_both:
 
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
+
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
   pinn_model_time, math_model_time = 1, 2000
@@ -123,4 +130,5 @@ if run_both:
 
 # If "CLEAR RESULTS" is pressed
 if clear_results:
+
   st.write("Deleted")
