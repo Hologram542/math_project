@@ -1,6 +1,6 @@
 import streamlit as st
-import demo_client
-import math_model
+from demo_client import generate_PINN_model
+from math_model import generate_math_model
 
 ## Dropdowns
 
