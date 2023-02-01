@@ -17,11 +17,8 @@ from sklearn.model_selection import train_test_split
 import keras
 from sklearn.metrics import mean_squared_error
 from datetime import datetime
-from google.colab import drive
 from numba import jit
 
-drive.mount('/content/drive')
-path = "/content/drive/MyDrive/Colab Notebooks/2d ad model src u v as param/files/"
 obs_file = "obstructions2d.csv"
 
 def scale(num,min,max):

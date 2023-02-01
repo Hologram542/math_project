@@ -1,0 +1,10 @@
+math
+numpy
+pandas
+matplotlib
+keras
+tensorflow
+scikit-learn
+time
+datetime
+numba
