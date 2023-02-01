@@ -97,7 +97,7 @@ with but_col2:
 # If the "PERFORMANCE STIMULATION" is pressed
 if performance_stimulation:
 
-  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
 
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
@@ -108,7 +108,7 @@ if performance_stimulation:
 # If the "ACCURACY STIMULATION" is pressed
 if accuracy_stimulation:
 
-  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
 
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
@@ -119,7 +119,7 @@ if accuracy_stimulation:
 # If "RUN BOTH" is pressed
 if run_both:
 
-  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
 
   # pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
