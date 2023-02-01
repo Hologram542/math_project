@@ -4,7 +4,7 @@ with st.spinner('Importing functions'):
   from math_model import generate_initial_model, generate_math_model
 
 
-def performance_func_ui(pinn_time, math_time):
+def performance_func_ui(math_time, pinn_time):
 
   img_col1, img_col2, img_col3 = st.columns(3)
 
@@ -67,5 +67,5 @@ if performance_stimulation:
   with st.spinner('Running PINN model...'):
     pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
 
-  performance_func_ui(pinn_model_time, pinn_model_time)
+  performance_func_ui(math_model_time, pinn_model_time)
 
