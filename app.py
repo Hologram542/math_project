@@ -7,17 +7,20 @@ def run_models(time_step, cx, cy, u, v):
   st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
   
 
-  with st.spinner('Running Initial model...'):
+  with st.spinner('Importing Initial model...'):
     from math_model import generate_initial_model
+  with st.spinner('Running Initial model...'):
     generate_initial_model(cx, cy,u,v, time_step)
 
-  with st.spinner('Running PINN model...'):
+  with st.spinner('Importing PINN model...'):
     from demo_client import generate_PINN_model
+  with st.spinner('Running PINN model...'):
     pinn_model_time = generate_PINN_model(time_step, cx, cy,u,v)
   #start time
   t1 = datetime.now()
-  with st.spinner('Running Math model...'):
+  with st.spinner('Importing Math model...'):
     from math_model import generate_math_model
+  with st.spinner('Running Math model...'):
     math_model_time = generate_math_model(cx, cy,u,v, time_step)
 
   # time difference in milliseconds
