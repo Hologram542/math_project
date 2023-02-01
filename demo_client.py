@@ -43,7 +43,7 @@ def generate_PINN_model(time, cx, cy,u,v):
   time = scale(time, 0, 1000)
   test_input = []
 
-  obs = pd.read_csv(path+obs_file)
+  obs = pd.read_csv(obs_file)
   obs = obs.to_numpy()
   total_rows, total_columns = obs.shape
 
