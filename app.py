@@ -48,3 +48,7 @@ if performance_stimulation:
   # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
   st.write("Time to generate PINN model") 
   st.write("{} milliseconds".format(str(pinn_model_time)))
+  st.image('pinn model.png', caption = 'PINN Results')
+  # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+  st.write("Time to generate PINN model") 
+  st.write("{} milliseconds".format(str(pinn_model_time)))
