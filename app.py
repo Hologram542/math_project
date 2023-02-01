@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
 
-@st.cache(show_spinner = False, allow_output_mutation = True)
+@st.experimental_memo(show_spinner = False)
 def run_models(time_step, cx, cy, u, v):
 
   st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
