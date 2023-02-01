@@ -56,7 +56,9 @@ def generate_PINN_model(time, cx, cy,u,v):
       x = scale(col, 0, 100)
       test_input.append([time, x, y, cx, cy, u_scaled, v_scaled])
   test_input = np.vstack(test_input)
-  old_model = keras.models.load_model('pollution.h5',custom_objects={'custom_loss':custom_loss_wrapper(obs)})
+
+  with st.spinner('Loading model...'):
+    old_model = keras.models.load_model('pollution.h5',custom_objects={'custom_loss':custom_loss_wrapper(obs)})
   X_validation = pd.DataFrame(test_input,columns =['time', 'x','y','cx','cy', 'u', 'v'])
 
   #start time
