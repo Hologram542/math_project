@@ -129,8 +129,12 @@ def generate_initial_model(c_x, c_y, u, v, time_steps):
         f[row][col] = 999
   f_mod = f.copy()
   f_mod[f_mod == 999] = 'nan'
+  plt.figure(figsize=(3, 3))
+  plt.title("Initial Condition")
   plt.imshow(f_mod, cmap='jet',interpolation='nearest')
   plt.colorbar()
+  plt.tight_layout()
+  plt.savefig('Initial condition.png')
   print(f"\n Initial Condition \n")
   plt.show()
 
@@ -168,8 +172,13 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   phi_old, input, output = run_code(total_rows,total_columns,f,phi_old,obstructions,u,v, time_steps)
   phi_old_modified = phi_old.astype('float')
   phi_old_modified[phi_old_modified==999] = 'nan'
+
+  plt.figure(figsize=(3, 3))
+  plt.title("Ground Truth (Math Model Results)")
   plt.imshow(phi_old_modified,cmap='jet',interpolation='nearest')
   plt.colorbar()
+  plt.tight_layout()
+  plt.savefig('math model.png')
   print(f"\nMath Model - source=({c_x},{c_y}) u={u} v={v} t={time_steps}\n")
   plt.show()
 
