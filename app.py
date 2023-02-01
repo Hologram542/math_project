@@ -5,7 +5,30 @@ with st.spinner('Importing functions'):
   from math_model import generate_initial_model, generate_math_model
 
 
-def performance_func_ui(math_time, pinn_time):
+def run_models(time_step, cx, cy, u, v):
+
+  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
+  
+
+  with st.spinner('Running Initial model...'):
+    generate_initial_model(cx, cy,u,v, time_step)
+
+  with st.spinner('Running PINN model...'):
+    pinn_model_time = generate_PINN_model(time_step, cx, cy,u,v)
+  #start time
+  t1 = datetime.now()
+  with st.spinner('Running Math model...'):
+    math_model_time = generate_math_model(cx, cy,u,v, time_step)
+
+  # time difference in milliseconds
+  t2 = datetime.now()
+  delta = t2 - t1
+  math_model_time = delta.total_seconds() * 1000
+
+  return pinn_model_time, math_model_time
+
+
+def performance_func_ui(pinn_time, math_time):
 
   img_col1, img_col2, img_col3 = st.columns(3)
 
@@ -21,6 +44,10 @@ def performance_func_ui(math_time, pinn_time):
     st.image('math model.png')
     st.write("Time to generate math model") 
     st.write("{} milliseconds".format(str(math_time)))
+
+def accuracy_func_ui(pinn_time, math_time):
+
+  st.write('work in progress')
 
 ## Dropdowns
 
@@ -59,21 +86,17 @@ with but_col2:
 
 # If the "SPEED STIMULATION" is pressed
 if performance_stimulation:
-  st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
-  
-    #start time
-  t1 = datetime.now()
-  with st.spinner('Running Initial model...'):
-    generate_initial_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-  with st.spinner('Running Math model...'):
-    math_model_time = generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
 
-  # time difference in milliseconds
-  t2 = datetime.now()
-  delta = t2 - t1
-  math_model_time = delta.total_seconds() * 1000
-  with st.spinner('Running PINN model...'):
-    pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
+  pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
-  performance_func_ui(math_model_time, pinn_model_time)
+  performance_func_ui(pinn_model_time, math_model_time)
+
+if accuracy_stimulation:
+
+  pinn_model_time, math_model_time = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
+
+  accuracy_func_ui(pinn_model_time, math_model_time)
+
+
+
 
