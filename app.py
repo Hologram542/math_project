@@ -4,24 +4,20 @@ with st.spinner('Importing functions'):
   from math_model import generate_initial_model, generate_math_model
 
 
-def performance_func(pinn_time, math_time):
+def performance_func_ui(pinn_time, math_time):
 
   img_col1, img_col2, img_col3 = st.columns(3)
 
   with img_col1:
-    st.image('pinn model.png')
-    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-
+    st.image('pinn model.png').
 
   with img_col2:
     st.image('pinn model.png')
-    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
     st.write("Time to generate PINN model") 
     st.write("{} milliseconds".format(str(pinn_time)))
 
   with img_col3:
     st.image('pinn model.png')
-    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
     st.write("Time to generate math model") 
     st.write("{} milliseconds".format(str(math_time)))
 
@@ -65,7 +61,9 @@ if performance_stimulation:
   st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
   
   with st.spinner('Running function...'):
+    generate_initial_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+    math_model_time = generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
     pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
 
-  performance_func(pinn_model_time, pinn_model_time)
+  performance_func_ui(pinn_model_time, pinn_model_time)
 
