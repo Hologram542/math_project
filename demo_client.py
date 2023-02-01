@@ -70,6 +70,7 @@ def generate_PINN_model(time, cx, cy,u,v):
     for col in range(0,total_columns):
       if obs[row][col] == 999:
         Y_validation[row][col] = 'nan'
+  plt.figsize((10, 5))
   plt.imshow(Y_validation,cmap='jet',interpolation='nearest')
   plt.colorbar()
   plt.tight_layout()
