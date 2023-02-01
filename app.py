@@ -1,5 +1,4 @@
 import streamlit as st
-import import_ipynb
 import demo_client
 import math_model
 
