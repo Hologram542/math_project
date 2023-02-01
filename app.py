@@ -126,7 +126,7 @@ if run_both:
   pinn_model_time, math_model_time = 1, 2000
 
   performance_func_ui(pinn_model_time, math_model_time)
-  accuracy_func_ui(pinn_model_time, math_model_time)
+  accuracy_func_ui(time_step_dropdown, pinn_model_time, math_model_time)
 
 # If "CLEAR RESULTS" is pressed
 if clear_results:
