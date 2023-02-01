@@ -1,4 +1,5 @@
 import streamlit as st
+import datetime
 with st.spinner('Importing functions'):
   from demo_client import generate_PINN_model
   from math_model import generate_initial_model, generate_math_model
@@ -60,10 +61,17 @@ with but_col2:
 if performance_stimulation:
   st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
   
+    #start time
+  t1 = datetime.now()
   with st.spinner('Running Initial model...'):
     generate_initial_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
   with st.spinner('Running Math model...'):
     math_model_time = generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+
+  # time difference in milliseconds
+  t2 = datetime.now()
+  delta = t2 - t1
+  math_model_time = delta.total_seconds() * 1000
   with st.spinner('Running PINN model...'):
     pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
 
