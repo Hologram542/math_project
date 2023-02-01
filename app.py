@@ -1,6 +1,7 @@
 import streamlit as st
-from demo_client import generate_PINN_model
-from math_model import generate_math_model
+with st.spinner('Importing functions'):
+  from demo_client import generate_PINN_model
+  from math_model import generate_math_model
 
 ## Dropdowns
 
