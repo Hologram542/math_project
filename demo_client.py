@@ -73,7 +73,7 @@ def generate_PINN_model(time, cx, cy,u,v):
       if obs[row][col] == 999:
         Y_validation[row][col] = 'nan'
   plt.figure(figsize=(3, 3))
-  plt.title("PINN Results", fontweight=100)
+  plt.title("PINN Results", fontstyle = 'Bold')
   plt.imshow(Y_validation,cmap='jet',interpolation='nearest')
   plt.colorbar()
   plt.tight_layout()
