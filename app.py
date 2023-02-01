@@ -5,15 +5,15 @@ import math_model
 ## Dropdowns
 
 st.write("**Enter the values for simulation**")
-time_step_dropdown = st.selectbox("Time step", ["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000"])
+time_step_dropdown = int(st.selectbox("Time step", ["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000"]))
 
 st.write("**Pollution Source Location**")
 col1, col2 = st.columns(2)
 with col1:
-  cx_dropdown = st.selectbox("cx", ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"])
+  cx_dropdown = int(st.selectbox("cx", ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]))
 
 with col2:
-  cy_dropdown = st.selectbox("cy", ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"])
+  cy_dropdown = int(st.selectbox("cy", ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]))
 
 st.write("**velocity in x and y directions**")
 col3, col4 = st.columns(2)
