@@ -19,6 +19,8 @@ from sklearn.metrics import mean_squared_error
 from datetime import datetime
 from numba import jit
 
+import streamlit as st
+
 obs_file = "obstructions2d.csv"
 
 def scale(num,min,max):
@@ -106,6 +108,7 @@ def run_code(total_rows,total_columns,f, phi_old,obstructions, u, v, time_steps)
           output.append([phi_old[row][col]])
   return phi_old, input, output
 
+@st.cache(show_spinner = False, allow_output_mutation = True)
 def generate_initial_model(c_x, c_y, u, v, time_steps):
   # load obstructions
   obstructions = pd.read_csv(obs_file)
@@ -131,7 +134,7 @@ def generate_initial_model(c_x, c_y, u, v, time_steps):
   print(f"\n Initial Condition \n")
   plt.show()
 
-
+@st.cache(show_spinner = False, allow_output_mutation = True)
 def generate_math_model(c_x, c_y, u, v, time_steps):
   #generate the math model
   # SPECIFY THE VALUES FOR ALL VARIABLES HERE
