@@ -44,11 +44,23 @@ if performance_stimulation:
   
   with st.spinner('Running function...'):
     pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
-  st.image('pinn model.png', caption = 'PINN Results')
-  # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-  st.write("Time to generate PINN model") 
-  st.write("{} milliseconds".format(str(pinn_model_time)))
-  st.image('pinn model.png', caption = 'PINN Results')
-  # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-  st.write("Time to generate PINN model") 
-  st.write("{} milliseconds".format(str(pinn_model_time)))
+
+  img_col1, img_col2, img_col3 = st.columns(3)
+
+  with img_col1:
+    st.image('pinn model.png', caption = 'PINN Results')
+    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+    st.write("Time to generate PINN model") 
+    st.write("{} milliseconds".format(str(pinn_model_time)))
+
+  with img_col2:
+    st.image('pinn model.png', caption = 'PINN Results')
+    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+    st.write("Time to generate PINN model") 
+    st.write("{} milliseconds".format(str(pinn_model_time)))
+
+  with img_col3:
+    st.image('pinn model.png', caption = 'PINN Results')
+    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+    st.write("Time to generate PINN model") 
+    st.write("{} milliseconds".format(str(pinn_model_time)))
