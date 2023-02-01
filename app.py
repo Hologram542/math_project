@@ -3,6 +3,28 @@ with st.spinner('Importing functions'):
   from demo_client import generate_PINN_model
   from math_model import generate_math_model
 
+
+def performance_func(pinn_time, math_time):
+
+  img_col1, img_col2, img_col3 = st.columns(3)
+
+  with img_col1:
+    st.image('pinn model.png')
+    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+
+
+  with img_col2:
+    st.image('pinn model.png')
+    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+    st.write("Time to generate PINN model") 
+    st.write("{} milliseconds".format(str(pinn_time)))
+
+  with img_col3:
+    st.image('pinn model.png')
+    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
+    st.write("Time to generate math model") 
+    st.write("{} milliseconds".format(str(math_time)))
+
 ## Dropdowns
 
 st.write("**Enter the values for simulation**")
@@ -45,22 +67,5 @@ if performance_stimulation:
   with st.spinner('Running function...'):
     pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
 
-  img_col1, img_col2, img_col3 = st.columns(3)
+  performance_func(pinn_model_time, pinn_model_time)
 
-  with img_col1:
-    st.image('pinn model.png', caption = 'PINN Results')
-    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-    st.write("Time to generate PINN model") 
-    st.write("{} milliseconds".format(str(pinn_model_time)))
-
-  with img_col2:
-    st.image('pinn model.png', caption = 'PINN Results')
-    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-    st.write("Time to generate PINN model") 
-    st.write("{} milliseconds".format(str(pinn_model_time)))
-
-  with img_col3:
-    st.image('pinn model.png', caption = 'PINN Results')
-    # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
-    st.write("Time to generate PINN model") 
-    st.write("{} milliseconds".format(str(pinn_model_time)))
