@@ -29,18 +29,18 @@ with col4:
 but_col1, but_col2 = st.columns(2)
 
 with but_col1:
-  accuracy_stimulation = st.button("RUN ACCURACY STIMULATION")
+  performance_stimulation = st.button("RUN PERFORMANCE STIMULATION")
   run_both = st.button("RUN BOTH")
   
 
 with but_col2:
-  speed_stimulation = st.button("RUN SPEED STIMULATION")
+  accuracy_stimulation = st.button("RUN ACCURACY STIMULATION")
   clear_results = st.button("CLEAR RESULTS")
 
 # If the "SPEED STIMULATION" is pressed
-if speed_stimulation:
+if performance_stimulation:
   st.markdown("""Time spent = {0}\nsource of pollution (cx, cy) = {1}, {2}\nu = {3}, v = {4}""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input))
   pinn_model_time = generate_PINN_model(time_step_dropdown, cx_dropdown, cy_dropdown,u_input,v_input)
-  st.image('pinn model.png')
+  st.image('pinn model.png', caption = 'PINN Results')
   # math_model.generate_math_model(cx_dropdown, cy_dropdown,u_input,v_input, time_step_dropdown)
   st.write("Time to generate PINN model - {} milliseconds".format(str(pinn_model_time)))
