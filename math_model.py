@@ -133,7 +133,7 @@ def generate_initial_model(c_x, c_y, u, v, time_steps):
   plt.imshow(f_mod, cmap='jet',interpolation='nearest')
   plt.colorbar()
   plt.tight_layout()
-  plt.savefig('Initial condition.png')
+  plt.savefig('initial condition.png')
   print(f"\n Initial Condition \n")
 
   return initial_fig
