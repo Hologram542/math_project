@@ -72,28 +72,11 @@ def generate_PINN_model(time, cx, cy,u,v):
     for col in range(0,total_columns):
       if obs[row][col] == 999:
         Y_validation[row][col] = 'nan'
+  pinn_fig = plt.figure()
   plt.figure(figsize=(3, 3))
   plt.title("PINN Results", fontweight="bold")
   plt.imshow(Y_validation,cmap='jet',interpolation='nearest')
   plt.colorbar()
   plt.tight_layout()
   plt.savefig('pinn model.png')
-  plt.show()
-  return duration_ms
-
-#@title SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES (2D Advection Diffusion Pollution Spread Math Model and PINN) { vertical-output: true, form-width: "100%", display-mode: "form" }
-cx = 60 #@param ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"] {type:"raw"}
-cy = 60 #@param ["0", "10", "20", "30", "40", "50", "60", "7-"] {type:"raw"}
-time_step = 1000 #@param ["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000"] {type:"raw"}
-u = 2 #@param {type:"number"}
-v = 3 #@param {type:"number"}
-
-# get time, cx, cy, u, v from the user
-#time, cx, cy, u, v = 1000, 60, 60, 3, 2
-# When user hits submit button, start math model clock
-# Diplay Results header
-# call math model initial condition and gen math model functions to display the results
-# call the PINN and display results
-duration_ms = generate_PINN_model(time_step, cx, cy, u, v)
-print("")
-print(f"Time to generate PINN model - {round(duration_ms,3)} milliseconds\n")
+  return duration_ms, pinn_fig

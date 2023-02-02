@@ -26,7 +26,7 @@ def scale(num,min,max):
   num_scaled = (num-middle)/(max-middle)
   return num_scaled
 
-#@jit(nopython=True)
+@jit
 def run_code(total_rows,total_columns,f, phi_old,obstructions, u, v, time_steps):
   #def scale(num,min,max):
     #middle = (min+max)/2
@@ -127,6 +127,7 @@ def generate_initial_model(c_x, c_y, u, v, time_steps):
         f[row][col] = 999
   f_mod = f.copy()
   f_mod[f_mod == 999] = 'nan'
+  initial_fig = plt.figure()
   plt.figure(figsize=(3, 3))
   plt.title("Initial Condition", fontweight="bold")
   plt.imshow(f_mod, cmap='jet',interpolation='nearest')
@@ -134,7 +135,8 @@ def generate_initial_model(c_x, c_y, u, v, time_steps):
   plt.tight_layout()
   plt.savefig('Initial condition.png')
   print(f"\n Initial Condition \n")
-  plt.show()
+
+  return initial_fig
 
 def generate_math_model(c_x, c_y, u, v, time_steps):
   #generate the math model
@@ -170,6 +172,7 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   phi_old_modified = phi_old.astype('float')
   phi_old_modified[phi_old_modified==999] = 'nan'
 
+  math_fig = plt.figure()
   plt.figure(figsize=(3, 3))
   plt.title("Ground Truth \n(Math Model Results)", fontweight="bold")
   plt.imshow(phi_old_modified,cmap='jet',interpolation='nearest')
@@ -177,22 +180,5 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   plt.tight_layout()
   plt.savefig('math model.png')
   print(f"\nMath Model - source=({c_x},{c_y}) u={u} v={v} t={time_steps}\n")
-  plt.show()
 
-# user input
-# hard coded for now
-c_x=60
-c_y=60
-u, v = 3, 2
-time_steps = 1000
-
-#start time
-t1 = datetime.now()
-generate_initial_model(c_x, c_y, u, v, time_steps)
-generate_math_model(c_x, c_y, u, v, time_steps)
-# time difference in milliseconds
-t2 = datetime.now()
-delta = t2 - t1
-ms = delta.total_seconds() * 1000
-print("")
-print(f"Time to generate math model - {round(ms,3)} milliseconds\n")
+  return math_fig
