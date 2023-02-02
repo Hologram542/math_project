@@ -26,7 +26,7 @@ def scale(num,min,max):
   num_scaled = (num-middle)/(max-middle)
   return num_scaled
 
-@jit
+@jit(nogil=True)
 def run_code(total_rows,total_columns,f, phi_old,obstructions, u, v, time_steps):
   #def scale(num,min,max):
     #middle = (min+max)/2
