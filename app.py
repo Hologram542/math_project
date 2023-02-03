@@ -63,18 +63,18 @@ def performance_func_ui(pinn_time, math_time, initial_fig, pinn_fig, math_fig):
 
 
   with upper_col2:
-    st.write('Initial condition')
+    st.markdown("<h1 style='text-align: center;font-size:15px'>Initial condition</h1>", unsafe_allow_html=True)
     st.image('initial condition.png')
 
   with lower_col1:
-    st.write('PINN Results')
+    st.markdown("<h1 style='text-align: center;font-size:15px'>PINN Results</h1>", unsafe_allow_html=True)
     st.image('pinn model.png')
     st.write("Time to generate PINN model **{}** milliseconds".format(str(round(pinn_time, 3))))
 
 
 
   with lower_col3:
-    st.write('Ground Truth (Math Model Results)')
+    st.markdown("<h1 style='text-align: center;font-size:15px'>Ground Truth (Math Model Results)</h1>", unsafe_allow_html=True)
     st.image('math model.png')
     st.write("Time to generate math model **{}** milliseconds".format(str(round(math_time, 3))))
 
