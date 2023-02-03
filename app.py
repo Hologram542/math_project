@@ -120,7 +120,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   math_cols[0].write("**Math Model Results (Ground Truth)**")
 
   
-  for i, timesteps in enumerate(np.arange(100, time_step_dropdown + 100, 100)):
+  for i, timesteps in enumerate(np.arange(100, time_step_dropdown + 1, 100)):
 
     
     text_cols[i+1].markdown("<h1 style='text-align: center;font-size:20px'>{}</h1>".format(timesteps), unsafe_allow_html=True)
