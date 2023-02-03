@@ -69,14 +69,14 @@ def performance_func_ui(pinn_time, math_time, initial_fig, pinn_fig, math_fig):
   with lower_col1:
     st.markdown("<h1 style='text-align: center;font-size:20px'>PINN Results</h1>", unsafe_allow_html=True)
     st.image('pinn model.png')
-    st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate PINN model **{str(round(pinn_time, 3))}** milliseconds</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate PINN model {str(round(pinn_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
 
 
   with lower_col3:
     st.markdown("<h1 style='text-align: center;font-size:20px'>Ground Truth (Math Model Results)</h1>", unsafe_allow_html=True)
     st.image('math model.png')
-    st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate PINN model **{str(round(math_time, 3))}** milliseconds</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate PINN model {str(round(math_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
 def accuracy_func_ui(time_steps_max):
   
