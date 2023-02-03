@@ -8,11 +8,9 @@ import base64
 
 #Stretch the wider 
 st.set_page_config(layout="wide")
-#Remove the unwanted space on the top
-st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 #Title
-st.markdown("<h1 style='text-align: center;font-size:20px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES </h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;'>(2D Advection Diffusion Pollution Spread Math Model and PINN) </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;font-size:20px;paddng-top:0rem;paddng-bottom:0rem;'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;paddng-bottom:0rem;'>(2D Advection Diffusion Pollution Spread Math Model and PINN) </h1>", unsafe_allow_html=True)
 
 
 #Run the initial model
