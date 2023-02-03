@@ -110,27 +110,24 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   num_cols = ((time_step_dropdown)//100) + 2
 
 
+  text_cols = st.columns(int(num_cols))
   pinn_cols = st.columns(int(num_cols))
   math_cols = st.columns(int(num_cols))
+
+
   
-  for timesteps in range(100, time_step_dropdown + 100, 100):
+  for i, timesteps in enumerate(arange(100, time_step_dropdown + 100, 100)):
 
     run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    pinn_cols[int((timesteps)//100)].image("pinn model.png")
     run_math_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    math_cols[int((timesteps)//100)].image("math model.png")
     globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
     globals()[f"math img {timesteps}"] = imageio.imread("math model.png")
 
   pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
 
-  for i, image_file in enumerate(pinn_files):
-    pinn_cols[i].image(image_file)
-  
-  for i, image_file in enumerate(math_files):
-    math_cols[i].image(image_file)
-
-  st.image(pinn_files)
-  st.image(math_files)
 
   pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
   st.markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
