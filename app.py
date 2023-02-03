@@ -95,6 +95,9 @@ def accuracy_func_ui(time_steps_max):
 
 ## Dropdowns
 
+#default values
+time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input = ["1000", "60", "60", "3", "2"]
+
 st.write("**Enter the values for simulation**")
 time_step_dropdown = int(st.selectbox("Time step", ["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000"]))
 
@@ -115,7 +118,6 @@ with col3:
 with col4:
   v_input = st.number_input("v")
 
-time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input = ["1000", "60", "60", "3", "2"]
 
 ##Buttons
 
