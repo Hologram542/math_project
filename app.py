@@ -103,14 +103,16 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
 
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
-  run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-  st.image('initial condition.png')
+
   num_cols = ((time_step_dropdown)//100) + 2
 
-
+  initial_cols = st.columns(int(num_cols))
   text_cols = st.columns(int(num_cols))
   pinn_cols = st.columns(int(num_cols))
   math_cols = st.columns(int(num_cols))
+
+  run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+  st.image('initial condition.png')
 
 
   text_cols[0].write("**Model**")
