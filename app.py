@@ -106,6 +106,11 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
   run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+
+  num_cols = ((time_step_dropdown)//100) + 2
+
+  pinn_cols = st.columns(num_cols)
+  math_cols = st.columns(num_cols)
   
   for timesteps in range(100, time_step_dropdown + 100, 100):
 
@@ -116,6 +121,12 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
   pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
+
+  for i, image_file in enumerate(pinn_files):
+    pinn_cols[i].image(image_file)
+  
+  for i, image_file in enumerate(math_files):
+    math_cols[i].image(image_file)
 
   st.image(pinn_files)
   st.image(math_files)
@@ -183,14 +194,6 @@ if run_both:
     performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
-if clear_results:
-    total = 8
-    
-    for col_num in np.arange(total):
-      globals()[f"col_{col_num + 1}"] = st.columns(col_num)[0]
-
-      with globals()[f"col_{col_num + 1}"]:
-        st.write(col_num)
 
 
 
