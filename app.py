@@ -156,12 +156,13 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
 ## Dropdowns
 
-st.write("**Enter the values for simulation**")
+st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:rem0;'>Enter the values for simulation</h1>", unsafe_allow_html=True)
 
 time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9)
 
 
 st.write("**Pollution Source Location**")
+st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:rem0;'>Pollution Source Location</h1>", unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
   cx_dropdown = st.selectbox("cx", np.arange(0, 110, 10), index = 6)
@@ -169,7 +170,7 @@ with col1:
 with col2:
   cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
 
-st.write("**velocity in x and y directions**")
+st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:rem0;'>velocity in x and y directions</h1>", unsafe_allow_html=True)
 col3, col4 = st.columns(2)
 
 with col3:
