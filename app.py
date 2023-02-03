@@ -183,3 +183,15 @@ if run_both:
     performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
+if clear_results:
+    total = 8
+    
+    for col_num in np.arange(total):
+      globals()[f"col_{col_num + 1}"] = st.columns(total)[col_num]
+
+      with globals()[f"col_{col_num + 1}"]:
+        st.write(col_num)
+
+
+
+
