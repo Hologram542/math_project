@@ -113,9 +113,9 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
 
   run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-  st.markdown("""<style>button[title^=Exit]+div [data-testid=stImage]{text-align: center;display: block;margin-left: auto;margin-right: auto;width: 100%;}</style>""", unsafe_allow_html=True
-    )
-  st.image('initial condition.png')
+
+  with initial_cols[int(num_cols)//2]:
+    st.image('initial condition.png')
 
 
   text_cols[0].write("**Model**")
