@@ -6,7 +6,7 @@ import imageio
 import base64
 
 st.set_page_config(layout="wide")
-st.write('<style>div.block-container{padding-top:0rem;}</style>', unsafe_allow_html=True)
+st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center;font-size:15px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES (2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
 
 # @st.experimental_memo(show_spinner = False)
