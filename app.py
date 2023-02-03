@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import imageio
 import base64
 
-
+st.set_page_config(layout="wide")
 st.markdown("<h1 style='text-align: center;font-size:15px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES<br><h1 style='text-align: center;font-size:15px'>(2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
 
 # @st.experimental_memo(show_spinner = False)
@@ -119,7 +119,7 @@ with col4:
 
 ##Buttons
 
-but_col1, but_col2, but_col3, but_col4 = st.columns([2, 2, 1, 1])
+but_col1, but_col2, but_col3, but_col4 = st.columns([2, 2, 1, 2])
 
 with but_col1:
   performance_stimulation = st.button("RUN PERFORMANCE STIMULATION")
