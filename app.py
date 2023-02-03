@@ -70,10 +70,10 @@ def images_to_gif(images, gif_name):
   with imageio.get_writer(gif_name, mode='I') as writer:
     for image in images:
       writer.append_data(image)
-      file_ = open(gif_name, "rb")
-      contents = file_.read()
-      data_url = base64.b64encode(contents).decode("utf-8")
-      file_.close()
+    file_ = open(gif_name, "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
   return data_url
 
 #Performance function
