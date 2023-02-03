@@ -95,17 +95,16 @@ def accuracy_func_ui(time_steps_max):
   pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
   st.markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
   math_data_url = images_to_gif(math_files, 'pinn model.gif')
-  st.markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
+  st.markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
 
 ## Dropdowns
 
 st.write("**Enter the values for simulation**")
-st.markdown("""<style>[data-baseweb="select"] {margin-top: -20px;}</style>""",unsafe_allow_html=True)
+st.markdown("""<style>[data-baseweb="select"] {margin-top: -50px;}</style>""",unsafe_allow_html=True)
 time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9)
 
 
 st.write("**Pollution Source Location**")
-# st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
   cx_dropdown = st.selectbox("cx", np.arange(0, 110, 10), index = 6)
@@ -114,7 +113,6 @@ with col2:
   cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
 
 st.write("**velocity in x and y directions**")
-# st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 col3, col4 = st.columns(2)
 
 with col3:
