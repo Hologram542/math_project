@@ -115,6 +115,8 @@ with col3:
 with col4:
   v_input = st.number_input("v")
 
+time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input = ["1000", "60", "60", "3", "2"]
+
 ##Buttons
 
 but_col1, but_col2 = st.columns(2)
