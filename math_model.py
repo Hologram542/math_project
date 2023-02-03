@@ -29,10 +29,6 @@ def scale(num,min,max):
 
 @jit(nopython=True)
 def run_code(total_rows,total_columns,f, phi_old,obstructions, u, v, time_steps):
-  #def scale(num,min,max):
-    #middle = (min+max)/2
-    #num_scaled = (num-middle)/(max-middle)
-    #return num_scaled
 
   u_scaled = scale(u, 1, 5)
   v_scaled = scale(v, 1, 5)
