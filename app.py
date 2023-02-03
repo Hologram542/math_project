@@ -104,10 +104,11 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
     st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate math model {str(round(math_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
+
+  run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
   
   for timesteps in range(100, time_step_dropdown + 100, 100):
 
-    run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     run_math_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
