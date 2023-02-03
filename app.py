@@ -116,11 +116,13 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
 
   text_cols[0].write("**Model**")
+  pinn_cols[0].write("**PINN Results**")
+  math_cols[0].write("**Math Model Results (Ground Truth)**")
 
   
   for i, timesteps in enumerate(np.arange(100, time_step_dropdown + 100, 100)):
 
-    text_cols[i+1].write(timesteps)
+    text_cols[i+1].write(str(timesteps))
 
     run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     pinn_cols[i+1].image("pinn model.png")
