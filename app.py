@@ -125,15 +125,17 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
     
     text_cols[i+1].markdown("<h1 style='text-align: center;font-size:15px'>{}</h1>".format(timesteps), unsafe_allow_html=True)
 
-    run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    run_pinn_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     pinn_cols[i+1].image("pinn model.png")
-    run_math_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    run_math_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     math_cols[i+1].image("math model.png")
     globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
     globals()[f"math img {timesteps}"] = imageio.imread("math model.png")
 
   pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
+
+  st.write(pinn)
 
 
   text_cols[num_cols - 1].markdown("<h1 style='text-align: center;font-size:15px'>ANIMATED GIF OF ALLMAGES TO THE LEFT</h1>", unsafe_allow_html=True)
