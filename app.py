@@ -100,7 +100,7 @@ def accuracy_func_ui(time_steps_max):
 ## Dropdowns
 
 st.write("**Enter the values for simulation**")
-# st.markdown("""<style>[data-baseweb="select"] {margin-top: -50px;}</style>""",unsafe_allow_html=True)
+st.markdown("""<style>[data-testid="stMarkdownContainer"] {margin-top: -50px;}</style>""",unsafe_allow_html=True)
 time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9)
 
 
