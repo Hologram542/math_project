@@ -115,13 +115,17 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   math_cols = st.columns(int(num_cols))
 
 
+  text_cols[0].write("**Model**")
+
   
   for i, timesteps in enumerate(np.arange(100, time_step_dropdown + 100, 100)):
 
+    text_cols[i+1].write(timesteps)
+
     run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-    pinn_cols[int((timesteps)//100)].image("pinn model.png")
+    pinn_cols[i+1].image("pinn model.png")
     run_math_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-    math_cols[int((timesteps)//100)].image("math model.png")
+    math_cols[i+1].image("math model.png")
     globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
     globals()[f"math img {timesteps}"] = imageio.imread("math model.png")
 
@@ -129,10 +133,10 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
 
 
-  pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
-  st.markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
-  math_data_url = images_to_gif(math_files, 'pinn model.gif')
-  st.markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
+  # pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
+  # st.markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
+  # math_data_url = images_to_gif(math_files, 'pinn model.gif')
+  # st.markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
 
 ## Dropdowns
 
