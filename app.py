@@ -6,8 +6,8 @@ import imageio
 import base64
 
 
-st.markdown("<h1 style='text-align: center;'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center;'>(2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;font-size:20px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;font-size:20px'>(2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
 
 # @st.experimental_memo(show_spinner = False)
 def run_models(time_step, cx, cy, u, v, show_input = True):
