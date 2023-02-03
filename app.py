@@ -18,12 +18,6 @@ st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;paddn
 #Run the initial model
 def run_initial_model(time_step, cx, cy, u, v):
 
-  # Add "Results" title
-  st.markdown("""<h1 style='text-align: center;font-size:25px'>Results</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
-
-  #Show the input values
-  st.markdown("""<h1 style='text-align: center;font-size:15px;padding-top:0rem;'>Time step = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown), unsafe_allow_html=True)
-
   #Import and run the initial model
   with st.spinner('Importing Initial model...'):
     from math_model import generate_initial_model
@@ -79,6 +73,13 @@ def images_to_gif(gif_name, files):
 #Performance function
 def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
+  # Add "Results" title
+  st.markdown("""<h1 style='text-align: center;font-size:25px'>Results</h1>""", unsafe_allow_html=True)
+
+  #Show the input values
+  st.markdown("""<h1 style='text-align: center;font-size:15px;padding-top:0rem;'>Time step = {0}, source of pollution (cx, cy) = {1}, {2}, u ={3},v = {4}</h1>""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown), unsafe_allow_html=True)
+
+
   upper_col1, upper_col2, upper_col3 = st.columns(3)
 
   lower_col1, lower_col2, lower_col3 = st.columns(3)
@@ -105,19 +106,25 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
 
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
+  # Add "Results" title
+  st.markdown("""<h1 style='text-align: center;font-size:25px'>Results2</h1>""", unsafe_allow_html=True)
+
+  #Show the input values
+  st.markdown("""<h1 style='text-align: center;font-size:15px;padding-top:0rem;'>Time step = {0}, source of pollution (cx, cy) = {1}, {2}, u ={3},v = {4}</h1>""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown), unsafe_allow_html=True)
+
 
   num_cols = ((time_step_dropdown)//100) + 2
 
-  initial_cols = st.columns(int(num_cols))
+  initial_cols = st.columns(5)
   text_cols = st.columns(int(num_cols))
   pinn_cols = st.columns(int(num_cols))
   math_cols = st.columns(int(num_cols))
 
-
-  with initial_cols[int(num_cols)//2]:
+  with initial_cols[2]:
     run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     st.image('initial condition.png')
-    st.markdown("<h1 style='text-align: center;font-size:15px'>Time steps</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;font-size:15px;;padding-top:rem0;;padding-bottom:rem0;'>Time steps</h1>", unsafe_allow_html=True)
+
 
 
   text_cols[0].write("**Model**")
