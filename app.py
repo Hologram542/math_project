@@ -137,7 +137,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
 
   text_cols[num_cols - 1].markdown("<h1 style='text-align: center;font-size:15px'>ANIMATED GIF OF ALLMAGES TO THE LEFT</h1>", unsafe_allow_html=True)
-  # pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
+  
   # pinn_cols[num_cols - 1].markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
   # math_data_url = images_to_gif(math_files, 'math model.gif')
   # math_cols[num_cols - 1].markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
@@ -145,17 +145,15 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   pinn_final = pinn_cols[num_cols - 1]
   math_final = math_cols[num_cols - 1]
 
+  for pinn_image in pinn_files:
+    pinn_final.image(pinn_image)
+    time.sleep(30)
 
-  pinn_final.image(pinn_files[0])
-  math_final.image(math_files[0])
-  pinn_final.image(pinn_files[1])
-  math_final.image(math_files[1])
-  pinn_final.image(pinn_files[2])
-  math_final.image(math_files[2])
-  pinn_final.image(pinn_files[3])
-  math_final.image(math_files[3])
-  pinn_final.image(pinn_files[4])
-  math_final.image(math_files[4])
+  for math_image in math_files:
+    math_final.image(math_files)
+    time.sleep(30)
+
+
 
 ## Dropdowns
 
