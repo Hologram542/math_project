@@ -116,6 +116,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   with initial_cols[int(num_cols)//2]:
     run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     st.image('initial condition.png')
+    st.write('Time step')
 
 
   text_cols[0].write("**Model**")
