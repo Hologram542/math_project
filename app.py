@@ -187,7 +187,7 @@ if clear_results:
     total = 8
     
     for col_num in np.arange(total):
-      globals()[f"col_{col_num + 1}"] = st.columns(total)[col_num]
+      globals()[f"col_{col_num + 1}"] = st.columns(col_num)[0]
 
       with globals()[f"col_{col_num + 1}"]:
         st.write(col_num)
