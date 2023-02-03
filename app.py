@@ -63,11 +63,11 @@ def performance_func_ui(pinn_time, math_time, initial_fig, pinn_fig, math_fig):
 
   with img_col2:
     st.image('pinn model.png')
-    st.write("Time to generate PINN model **{:.3f}** milliseconds".format(str(pinn_time)))
+    st.write("Time to generate PINN model **{:.{3}f}** milliseconds".format(str(pinn_time)))
 
   with img_col3:
     st.image('math model.png')
-    st.write("Time to generate math model **{:.3f}** milliseconds".format(str(math_time)))
+    st.write("Time to generate math model **{:.{3}f}** milliseconds".format(str(math_time)))
 
 def accuracy_func_ui(time_steps_max):
   
