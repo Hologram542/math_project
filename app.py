@@ -119,7 +119,7 @@ with col4:
 
 ##Buttons
 
-but_col1, but_col2, but_col3, but_col4 = st.columns([2, 2, 1, 2])
+but_col1, but_col2, but_col3, but_col4 = st.columns(4)
 
 with but_col1:
   performance_stimulation = st.button("RUN PERFORMANCE STIMULATION")
