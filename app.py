@@ -107,18 +107,22 @@ time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index 
 st.write("**Pollution Source Location**")
 col1, col2 = st.columns(2)
 with col1:
+  st.write("cx")
   cx_dropdown = st.selectbox("cx", np.arange(0, 110, 10), index = 6)
 
 with col2:
+  st.write("cy")
   cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
 
 st.write("**velocity in x and y directions**")
 col3, col4 = st.columns(2)
 
 with col3:
+  st.write("u")
   u_input = st.selectbox("u", np.arange(0.0, 5.5, 0.5), index = 6)
 
 with col4:
+  st.write("v")
   v_input = st.selectbox("v", np.arange(0.0, 5.5, 0.5), index = 4)
 
 
