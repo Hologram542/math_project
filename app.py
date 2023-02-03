@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 import imageio
 import base64
 
+st.title('SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES\n(2D Advection Diffusion Pollution Spread Math Model and PINN)')
 
 # @st.experimental_memo(show_spinner = False)
 def run_models(time_step, cx, cy, u, v, show_input = True):
