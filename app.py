@@ -116,7 +116,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
 
   
-  for i, timesteps in enumerate(arange(100, time_step_dropdown + 100, 100)):
+  for i, timesteps in enumerate(np.arange(100, time_step_dropdown + 100, 100)):
 
     run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     pinn_cols[int((timesteps)//100)].image("pinn model.png")
