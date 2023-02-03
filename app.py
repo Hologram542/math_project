@@ -135,8 +135,6 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
 
-  st.write(pinn)
-
 
   text_cols[num_cols - 1].markdown("<h1 style='text-align: center;font-size:15px'>ANIMATED GIF OF ALLMAGES TO THE LEFT</h1>", unsafe_allow_html=True)
   pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
