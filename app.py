@@ -205,9 +205,8 @@ if accuracy_simulation:
 # # If "RUN BOTH" is pressed
 if run_both:
 
-  for timesteps in range(100, time_step_dropdown + 100, 100):
-    performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-    accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+  performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+  accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 
 
