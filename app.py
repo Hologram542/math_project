@@ -58,12 +58,14 @@ def performance_func_ui(pinn_time, math_time, initial_fig, pinn_fig, math_fig):
 
   img_col1, img_col2, img_col3 = st.columns(3)
 
-  with img_col1:
-    st.image('initial condition.png')
 
-  with img_col2:
+
+  with img_col1:
     st.image('pinn model.png')
     st.write("Time to generate PINN model **{}** milliseconds".format(str(round(pinn_time, 3))))
+
+  with img_col2:
+    st.image('initial condition.png')
 
   with img_col3:
     st.image('math model.png')
