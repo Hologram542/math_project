@@ -109,8 +109,8 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
   num_cols = ((time_step_dropdown)//100) + 2
 
-  pinn_cols = st.columns(str(num_cols))
-  math_cols = st.columns(str(num_cols))
+  pinn_cols = st.columns(num_cols)
+  math_cols = st.columns(num_cols)
   
   for timesteps in range(100, time_step_dropdown + 100, 100):
 
