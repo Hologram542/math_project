@@ -11,8 +11,10 @@ st.set_page_config(layout="wide")
 #Remove the unwanted space on the top
 st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 #Title
-st.markdown("<h1 style='text-align: center;font-size:20px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES (2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
-
+st.markdown("<h1 style='text-align: center;font-size:20px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES </h1>", unsafe_allow_html=True)
+#Remove the unwanted space on the top
+st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;font-size:20px'>(2D Advection Diffusion Pollution Spread Math Model and PINN) </h1>", unsafe_allow_html=True)
 #Run the initial model
 def run_initial_model(time_step, cx, cy, u, v):
 
@@ -115,7 +117,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   with initial_cols[int(num_cols)//2]:
     run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     st.image('initial condition.png')
-    st.markdown("<h1 style='text-align: center;font-size:15px'>Time step</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;font-size:15px'>Time steps</h1>", unsafe_allow_html=True)
 
 
   text_cols[0].write("**Model**")
