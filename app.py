@@ -13,8 +13,9 @@ st.markdown("<h1 style='text-align: center;font-size:15px'>SIMPLE FLOW REGIME WI
 def run_models(time_step, cx, cy, u, v, show_input = True):
 
   if show_input:
-    st.markdown("""<h1 style='text-align: center;font-size:25px;padding-top:1rem;'>Results</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
-    st.markdown("""<h1 style='text-align: center;font-size:15px;padding-top:1rem;'>Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
+    st.markdown("""<h1 style='text-align: center;font-size:25px'>Results</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
+    st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
+    st.markdown("""<h1 style='text-align: center;font-size:15px'>Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
   
 
   with st.spinner('Importing Initial model...'):
@@ -95,10 +96,11 @@ def accuracy_func_ui(time_steps_max):
 
 ## Dropdowns
 
-
+st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 st.write("**Enter the values for simulation**")
 time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9)
 
+st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 st.write("**Pollution Source Location**")
 col1, col2 = st.columns(2)
 with col1:
@@ -107,6 +109,7 @@ with col1:
 with col2:
   cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
 
+st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 st.write("**velocity in x and y directions**")
 col3, col4 = st.columns(2)
 
