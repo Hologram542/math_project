@@ -161,7 +161,7 @@ st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:rem0;'>Ent
 time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9)
 
 
-st.markdown("<h1 style='font-size:10px;padding-top:rem0;'>Pollution Source Location</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='font-size:15px;padding-top:rem0;'>Pollution Source Location</h1>", unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
   cx_dropdown = st.selectbox("cx", np.arange(0, 110, 10), index = 6)
@@ -169,7 +169,7 @@ with col1:
 with col2:
   cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
 
-st.markdown("<h1 style='font-size:10px;padding-top:rem0;'>velocity in x and y directions</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='font-size:15px;padding-top:rem0;'>velocity in x and y directions</h1>", unsafe_allow_html=True)
 col3, col4 = st.columns(2)
 
 with col3:
