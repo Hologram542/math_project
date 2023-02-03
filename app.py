@@ -15,7 +15,7 @@ def run_models(time_step, cx, cy, u, v, show_input = True):
   if show_input:
 
     st.markdown("""<h1 style='text-align: center;font-size:25px'>Results</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
-    st.markdown("""<style>[data-baseweb="select"] {margin-top: -50px;}</style>""",unsafe_allow_html=True)
+    st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
     st.markdown("""<h1 style='text-align: center;font-size:15px'>Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
   
 
