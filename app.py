@@ -86,22 +86,22 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
 
   with upper_col2:
     run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-    st.markdown("<h1 style='text-align: center;font-size:20px'>Initial condition</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:rem0;'>Initial condition</h1>", unsafe_allow_html=True)
     st.image('initial condition.png')
 
   with lower_col1:
     pinn_time = run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-    st.markdown("<h1 style='text-align: center;font-size:20px'>PINN Results</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;font-size:20px'pading-top:rem0;'>PINN Results</h1>", unsafe_allow_html=True)
     st.image('pinn model.png')
-    st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate PINN model {str(round(pinn_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center;font-size:15px;padding-top:rem0;'>Time to generate PINN model {str(round(pinn_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
 
 
   with lower_col3:
     math_time = run_math_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-    st.markdown("<h1 style='text-align: center;font-size:20px'>Ground Truth (Math Model Results)</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:rem0;'>Ground Truth (Math Model Results)</h1>", unsafe_allow_html=True)
     st.image('math model.png')
-    st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate math model {str(round(math_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center;font-size:15px;padding-top:rem0;'>Time to generate math model {str(round(math_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
