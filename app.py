@@ -102,19 +102,19 @@ time_step_dropdown = int(st.selectbox("Time step", np.arange(100, 1100, 100), in
 st.write("**Pollution Source Location**")
 col1, col2 = st.columns(2)
 with col1:
-  cx_dropdown = int(st.selectbox("cx", ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"], index = 6))
+  cx_dropdown = int(st.selectbox("cx", np.arange(0, 110, 10), index = 6))
 
 with col2:
-  cy_dropdown = int(st.selectbox("cy", ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"], index = 6))
+  cy_dropdown = int(st.selectbox("cy", np.arange(0, 110, 10), index = 6))
 
 st.write("**velocity in x and y directions**")
 col3, col4 = st.columns(2)
 
 with col3:
-  u_input = int(st.selectbox("u", ["0.5", "1.0", "1.5", "2.0", "2.5", "", "60", "70", "80", "90", "100"], index = 6))
+  u_input = int(st.selectbox("u", np.arange(0.0, 5.5, 0.5), index = 6))
 
 with col4:
-  v_input = int(st.selectbox("v", ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"], index = 6))
+  v_input = int(st.selectbox("v", np.arange(0.0, 5.5, 0.5), index = 4))
 
 
 ##Buttons
