@@ -148,11 +148,11 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
   for pinn_image in pinn_files:
     pinn_final.image(pinn_image)
-    time.sleep(30)
+    time.sleep(1)
 
   for math_image in math_files:
     math_final.image(math_files)
-    time.sleep(30)
+    time.sleep(1)
 
 
 
