@@ -13,7 +13,8 @@ st.markdown("<h1 style='text-align: center;font-size:15px'>SIMPLE FLOW REGIME WI
 def run_models(time_step, cx, cy, u, v, show_input = True):
 
   if show_input:
-    st.markdown("""Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}""".format(time_step, cx, cy, u, v))
+    st.markdown("""<h1 style='text-align: center;font-size:15px'>Results</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
+    st.markdown("""<h1 style='text-align: center;font-size:15px'>Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
   
 
   with st.spinner('Importing Initial model...'):
@@ -123,10 +124,10 @@ with col4:
 but_col1, but_col2, but_col3, but_col4 = st.columns(4)
 
 with but_col1:
-  performance_stimulation = st.button("RUN PERFORMANCE STIMULATION")
+  performance_simulation = st.button("RUN PERFORMANCE SIMULATION")
 
 with but_col2:
-  accuracy_stimulation = st.button("RUN ACCURACY STIMULATION")
+  accuracy_simulation = st.button("RUN ACCURACY SIMULATION")
 
 with but_col3:
   run_both = st.button("RUN BOTH")
@@ -134,15 +135,15 @@ with but_col3:
 with but_col4:
   clear_results = st.button("CLEAR RESULTS")
 
-# If the "PERFORMANCE STIMULATION" is pressed
-if performance_stimulation:
+# If the "PERFORMANCE SIMULATION" is pressed
+if performance_simulation:
 
   pinn_model_time, math_model_time, initial_fig, pinn_fig, math_fig = run_models(time_step_dropdown, cx_dropdown, cy_dropdown, u_input, v_input)
 
   performance_func_ui(pinn_model_time, math_model_time, initial_fig, pinn_fig, math_fig)
 
-# If the "ACCURACY STIMULATION" is pressed
-if accuracy_stimulation:
+# If the "ACCURACY SIMULATION" is pressed
+if accuracy_simulation:
 
   accuracy_func_ui(time_step_dropdown)
 
