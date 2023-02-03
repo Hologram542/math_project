@@ -136,10 +136,10 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
 
 
-  # pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
-  # st.markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
-  # math_data_url = images_to_gif(math_files, 'pinn model.gif')
-  # st.markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
+  pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
+  pinn_cols[num_cols - 1].markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
+  math_data_url = images_to_gif(math_files, 'math model.gif')
+  math_cols[num_cols - 1].markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
 
 ## Dropdowns
 
