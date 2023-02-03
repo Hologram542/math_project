@@ -68,14 +68,7 @@ def run_math_model(time_step, cx, cy, u, v):
 # Convert the images into a gif
 def images_to_gif(images, gif_name):
 
-  with imageio.get_writer(gif_name, mode='I') as writer:
-    for image in images:
-      writer.append_data(image)
-    file_ = open(gif_name, "rb")
-    contents = file_.read()
-    data_url = base64.b64encode(contents).decode("utf-8")
-    file_.close()
-  return data_url
+z
 
 #Performance function
 def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
@@ -146,13 +139,11 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   pinn_final = pinn_cols[num_cols - 1]
   math_final = math_cols[num_cols - 1]
 
-  for pinn_image in pinn_files:
-    pinn_final.image(pinn_image)
-    time.sleep(1)
+  imageio.mimsave('pinn model.gif', pinn_files)
+  imageio.mimsave('math model.gif', math_files)
 
-  for math_image in math_files:
-    math_final.image(math_files)
-    time.sleep(1)
+  pinn_final.image('pinn model.gif')
+  math_final.image('math model.gif')
 
 
 
