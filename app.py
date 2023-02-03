@@ -72,7 +72,7 @@ def images_to_gif(gif_name, files):
   for file in files:
     images.append(file)
 
-  imageio.mimsave(gif_name, images)
+  imageio.mimsave(gif_name, images, duration = 2)
 
 #Performance function
 def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
