@@ -173,7 +173,7 @@ if performance_simulation:
 # If the "ACCURACY SIMULATION" is pressed
 if accuracy_simulation:
 
-  accuracy_func_ui(time_step_dropdown)
+  accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 # # If "RUN BOTH" is pressed
 if run_both:
