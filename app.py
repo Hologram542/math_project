@@ -56,20 +56,21 @@ def images_to_gif(images, gif_name):
 
 def performance_func_ui(pinn_time, math_time, initial_fig, pinn_fig, math_fig):
 
-  img_col1, img_col2, img_col3 = st.columns(3)
+  upper_col1, upper_col2, upper_col3 = st.columns(3)
+
+  lower_col1, lower_col2, lower_col3 = st.columns(3)
 
 
+  with upper_col2:
+    st.image('initial condition.png')
 
-  with img_col1:
-    st.empty()
+  with lower_col1:
     st.image('pinn model.png')
     st.write("Time to generate PINN model **{}** milliseconds".format(str(round(pinn_time, 3))))
 
-  with img_col2:
-    st.image('initial condition.png')
 
-  with img_col3:
-    st.empty()
+
+  with lower_col3:
     st.image('math model.png')
     st.write("Time to generate math model **{}** milliseconds".format(str(round(math_time, 3))))
 
