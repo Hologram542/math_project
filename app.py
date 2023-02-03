@@ -5,23 +5,32 @@ from matplotlib import pyplot as plt
 import imageio
 import base64
 
+#Stretch the wider 
 st.set_page_config(layout="wide")
+#Remove the unwanted space on the top
 st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center;font-size:15px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES (2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
+#Title
+st.markdown("<h1 style='text-align: center;font-size:20px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES (2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
 
+#Run the initial model
 def run_initial_model(time_step, cx, cy, u, v):
 
+  # Add "Results" title
   st.markdown("""<h1 style='text-align: center;font-size:25px'>Results</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
 
+  #Remove unwanted space
   st.markdown("""<h1 style='text-align: center;font-size:15px;padding-top:0rem;'>Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
 
+  #Import and run the initial model
   with st.spinner('Importing Initial model...'):
     from math_model import generate_initial_model
   with st.spinner('Running Initial model...'):
     initial_fig = generate_initial_model(cx, cy,u,v, time_step)
 
+#Run the PINN model
 def run_pinn_model(time_step, cx, cy, u, v):
 
+  # Import and run the PINN model
   with st.spinner('Importing Initial model...'):
     from math_model import generate_initial_model
   with st.spinner('Running Initial model...'):
@@ -34,10 +43,13 @@ def run_pinn_model(time_step, cx, cy, u, v):
 
   return pinn_model_time
 
+#Run the math model
 def run_math_model(time_step, cx, cy, u, v):
 
   #start time
   t1 = datetime.now()
+
+  #Import and run the math model
   with st.spinner('Importing Math model...'):
     from math_model import generate_math_model
   with st.spinner('Running Math model...'):
@@ -52,9 +64,9 @@ def run_math_model(time_step, cx, cy, u, v):
 
 
 
-
+# Convert the images into a gif
 def images_to_gif(images, gif_name):
-  # Convert the images into a gif
+
   with imageio.get_writer(gif_name, mode='I') as writer:
     for image in images:
       writer.append_data(image)
@@ -64,7 +76,7 @@ def images_to_gif(images, gif_name):
       file_.close()
   return data_url
 
-
+#Performance function
 def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
   upper_col1, upper_col2, upper_col3 = st.columns(3)
@@ -91,29 +103,31 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
     st.image('math model.png')
     st.markdown(f"<h1 style='text-align: center;font-size:15px'>Time to generate math model {str(round(math_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
-# def accuracy_func_ui(time_steps_max):
+def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
   
-#   for timesteps in range(100, time_steps_max + 100, 100):
+  for timesteps in range(100, time_step_dropdown + 100, 100):
 
-#     run_models(timesteps, cx_dropdown, cy_dropdown, u_input, v_input, False)
-#     globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
-#     globals()[f"math img {timesteps}"] = imageio.imread("math model.png")
+    run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    run_pinn_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    run_math_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
+    globals()[f"math img {timesteps}"] = imageio.imread("math model.png")
 
-#   pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_steps_max + 100, 100)]
-#   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_steps_max + 100, 100)]
+  pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
+  math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
 
-#   st.image(pinn_files)
-#   st.image(math_files)
+  st.image(pinn_files)
+  st.image(math_files)
 
-#   pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
-#   st.markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
-#   math_data_url = images_to_gif(math_files, 'pinn model.gif')
-#   st.markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
+  pinn_data_url = images_to_gif(pinn_files, 'pinn model.gif')
+  st.markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
+  math_data_url = images_to_gif(math_files, 'pinn model.gif')
+  st.markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
 
 ## Dropdowns
 
 st.write("**Enter the values for simulation**")
-# st.markdown("""<style>[data-testid="stMarkdownContainer"] {margin-top: -10px;margin-bottom: -10px;}</style>""",unsafe_allow_html=True)
+
 time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9)
 
 
@@ -157,17 +171,14 @@ if performance_simulation:
   performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 # If the "ACCURACY SIMULATION" is pressed
-# if accuracy_simulation:
+if accuracy_simulation:
 
-#   accuracy_func_ui(time_step_dropdown)
+  accuracy_func_ui(time_step_dropdown)
 
 # # If "RUN BOTH" is pressed
-# if run_both:
+if run_both:
 
-#   for timesteps in range(100, time_step_dropdown + 100, 100):
-#     pinn_model_time, math_model_time, initial_fig, pinn_fig, math_fig = run_models(timesteps, cx_dropdown, cy_dropdown, u_input, v_input, False)
+  for timesteps in range(100, time_step_dropdown + 100, 100):
+    performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
-    
-#     accuracy_func_ui(time_step_dropdown)
-
-#   performance_func_ui(pinn_model_time, math_model_time, initial_fig, pinn_fig, math_fig)
