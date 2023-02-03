@@ -111,7 +111,10 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   pinn_cols = st.columns(int(num_cols))
   math_cols = st.columns(int(num_cols))
 
+
   run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+  st.markdown("""<style>button[title^=Exit]+div [data-testid=stImage]{text-align: center;display: block;margin-left: auto;margin-right: auto;width: 100%;}</style>""", unsafe_allow_html=True
+    )
   st.image('initial condition.png')
 
 
@@ -137,10 +140,6 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
 
   text_cols[num_cols - 1].markdown("<h1 style='text-align: center;font-size:15px'>ANIMATED GIF OF ALLMAGES TO THE LEFT</h1>", unsafe_allow_html=True)
-  
-  # pinn_cols[num_cols - 1].markdown(f'<img src="data:image/gif;base64,{pinn_data_url}" alt="pinn model gif">',unsafe_allow_html=True,)
-  # math_data_url = images_to_gif(math_files, 'math model.gif')
-  # math_cols[num_cols - 1].markdown(f'<img src="data:image/gif;base64,{math_data_url}" alt="math model gif">',unsafe_allow_html=True,)
 
   pinn_final = pinn_cols[num_cols - 1]
   math_final = math_cols[num_cols - 1]
