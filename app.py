@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from datetime import datetime
 import numpy as np
 from matplotlib import pyplot as plt
