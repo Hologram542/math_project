@@ -20,7 +20,7 @@ def run_initial_model(time_step, cx, cy, u, v):
   st.markdown("""<h1 style='text-align: center;font-size:25px'>Results</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
 
   #Remove unwanted space
-  st.markdown("""<h1 style='text-align: center;font-size:15px;padding-top:0rem;'>Time spent = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
+  st.markdown("""<h1 style='text-align: center;font-size:15px;padding-top:0rem;'>Time step = {0}, source of pollution (cx, cy) = {1}, {2}, u = {3}, v = {4}</h1>""".format(time_step, cx, cy, u, v), unsafe_allow_html=True)
 
   #Import and run the initial model
   with st.spinner('Importing Initial model...'):
@@ -104,7 +104,7 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
   run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-
+  st.image('initial model.png')
   num_cols = ((time_step_dropdown)//100) + 2
 
 
