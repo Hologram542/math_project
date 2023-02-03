@@ -129,7 +129,6 @@ def generate_initial_model(c_x, c_y, u, v, time_steps):
   f_mod = f.copy()
   f_mod[f_mod == 999] = 'nan'
   initial_fig = plt.figure()
-  plt.figure(figsize=(3, 3))
   plt.title("Initial Condition", fontweight="bold")
   plt.imshow(f_mod, cmap='jet',interpolation='nearest')
   plt.colorbar()
@@ -174,7 +173,6 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   phi_old_modified[phi_old_modified==999] = 'nan'
 
   math_fig = plt.figure()
-  plt.figure(figsize=(3, 3))
   plt.title("Ground Truth \n(Math Model Results)", fontweight="bold")
   plt.imshow(phi_old_modified,cmap='jet',interpolation='nearest')
   plt.colorbar()
