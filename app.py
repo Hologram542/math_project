@@ -111,10 +111,9 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   pinn_cols = st.columns(int(num_cols))
   math_cols = st.columns(int(num_cols))
 
-  run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
   with initial_cols[int(num_cols)//2]:
-
+    run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     st.image('initial condition.png')
     st.markdown("<h1 style='text-align: center;font-size:15px'>Time step</h1>", unsafe_allow_html=True)
 
