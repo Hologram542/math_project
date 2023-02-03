@@ -97,7 +97,7 @@ def accuracy_func_ui(time_steps_max):
 
 
 st.write("**Enter the values for simulation**")
-time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9, help = "1")
+time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9)
 
 st.write("**Pollution Source Location**")
 col1, col2 = st.columns(2)
