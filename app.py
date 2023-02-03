@@ -146,8 +146,16 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   math_final = math_cols[num_cols - 1]
 
 
-  pinn_final.image(pinn_files[i])
-  math_final.image(math_files[i])
+  pinn_final.image(pinn_files[0])
+  math_final.image(math_files[0])
+  pinn_final.image(pinn_files[1])
+  math_final.image(math_files[1])
+  pinn_final.image(pinn_files[2])
+  math_final.image(math_files[2])
+  pinn_final.image(pinn_files[3])
+  math_final.image(math_files[3])
+  pinn_final.image(pinn_files[4])
+  math_final.image(math_files[4])
 
 ## Dropdowns
 
