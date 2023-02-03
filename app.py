@@ -107,7 +107,9 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
   run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
-  num_cols = ((time_step_dropdown)//100) + 2
+  # num_cols = ((time_step_dropdown)//100) + 2
+
+  num_cols = st.number_input()
 
   pinn_cols = st.columns(num_cols)
   math_cols = st.columns(num_cols)
