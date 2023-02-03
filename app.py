@@ -6,6 +6,22 @@ import imageio
 import base64
 
 st.set_page_config(layout="wide")
+st.markdown("""
+        <style>
+               .css-18e3th9 {
+                    padding-top: 0rem;
+                    padding-bottom: 10rem;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+               .css-1d391kg {
+                    padding-top: 3.5rem;
+                    padding-right: 1rem;
+                    padding-bottom: 3.5rem;
+                    padding-left: 1rem;
+                }
+        </style>
+        """, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center;font-size:15px'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES<br><h1 style='text-align: center;font-size:15px'>(2D Advection Diffusion Pollution Spread Math Model and PINN)</h1>", unsafe_allow_html=True)
 
 # @st.experimental_memo(show_spinner = False)
