@@ -104,7 +104,7 @@ def performance_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
   run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
-  st.image('initial model.png')
+  st.image('initial condition.png')
   num_cols = ((time_step_dropdown)//100) + 2
 
 
