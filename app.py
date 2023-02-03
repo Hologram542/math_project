@@ -97,24 +97,24 @@ def accuracy_func_ui(time_steps_max):
 
 
 st.write("**Enter the values for simulation**")
-time_step_dropdown = int(st.selectbox("Time step", np.arange(100, 1100, 100), index = 9))
+time_step_dropdown = st.selectbox("Time step", np.arange(100, 1100, 100), index = 9, help = "1")
 
 st.write("**Pollution Source Location**")
 col1, col2 = st.columns(2)
 with col1:
-  cx_dropdown = int(st.selectbox("cx", np.arange(0, 110, 10), index = 6))
+  cx_dropdown = st.selectbox("cx", np.arange(0, 110, 10), index = 6)
 
 with col2:
-  cy_dropdown = int(st.selectbox("cy", np.arange(0, 110, 10), index = 6))
+  cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
 
 st.write("**velocity in x and y directions**")
 col3, col4 = st.columns(2)
 
 with col3:
-  u_input = int(st.selectbox("u", np.arange(0.0, 5.5, 0.5), index = 6))
+  u_input = st.selectbox("u", np.arange(0.0, 5.5, 0.5), index = 6)
 
 with col4:
-  v_input = int(st.selectbox("v", np.arange(0.0, 5.5, 0.5), index = 4))
+  v_input = st.selectbox("v", np.arange(0.0, 5.5, 0.5), index = 4)
 
 
 ##Buttons
