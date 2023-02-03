@@ -119,15 +119,18 @@ with col4:
 
 ##Buttons
 
-but_col1, but_col2 = st.columns(2)
+but_col1, but_col2, but_col3, but_col4 = st.columns(4)
 
 with but_col1:
   performance_stimulation = st.button("RUN PERFORMANCE STIMULATION")
-  run_both = st.button("RUN BOTH")
-  
 
 with but_col2:
   accuracy_stimulation = st.button("RUN ACCURACY STIMULATION")
+
+with but_col3:
+  run_both = st.button("RUN BOTH")
+
+with but_col4:
   clear_results = st.button("CLEAR RESULTS")
 
 # If the "PERFORMANCE STIMULATION" is pressed
