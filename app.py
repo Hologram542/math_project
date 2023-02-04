@@ -142,7 +142,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
     globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
 
-  for I, timesteps in enumerate(np.arange(100, time_step_dropdown +1, 100)):
+  for i, timesteps in enumerate(np.arange(100, time_step_dropdown +1, 100)):
 
     run_math_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     math_cols[i+1].image("math model.png")
