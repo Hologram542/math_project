@@ -119,6 +119,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   text_cols = st.columns(int(num_cols))
   pinn_cols = st.columns(int(num_cols))
   math_cols = st.columns(int(num_cols))
+  gif_cols = st.columns(6)
 
   with initial_cols[2]:
     run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
