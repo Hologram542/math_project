@@ -146,7 +146,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
   pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
   
-  text_cols[num_cols - 1].markdown("<h1 style='text-align: center;font-size:15px'>ANIMATED GIF</h1>", unsafe_allow_html=True)
+  # text_cols[num_cols - 1].markdown("<h1 style='text-align: center;font-size:15px'>ANIMATED GIF</h1>", unsafe_allow_html=True)
   pinn_final = gif_cols[0]
   images_to_gif('pinn model.gif', pinn_files)
   pinn_final.image('pinn model.gif')
