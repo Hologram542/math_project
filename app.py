@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit import legacy_caching
 import time
 from datetime import datetime
 import numpy as np
@@ -222,7 +223,7 @@ with but_col4:
 # If the "ACCURACY SIMULATION" is pressed
 if accuracy_simulation:
 
-  st.experimental_memo.clear()
+  legacy_caching.clear_cache()
   accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 # # If "RUN BOTH" is pressed
