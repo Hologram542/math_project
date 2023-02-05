@@ -105,6 +105,7 @@ def images_to_gif(gif_name, files):
 #     st.image('math model.png')
 #     st.markdown(f"<h1 style='text-align: center;font-size:15px;padding-top:rem0;'>Time to generate math model {str(round(math_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
+@st.experimental_memo()
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
   # Add "Results" title
@@ -221,7 +222,7 @@ with but_col4:
 # If the "ACCURACY SIMULATION" is pressed
 if accuracy_simulation:
 
-  st.clear()
+  st.experimental_memo.clear()
   accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 # # If "RUN BOTH" is pressed
