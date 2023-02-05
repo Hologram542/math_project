@@ -141,6 +141,8 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   #generate the math model
   # SPECIFY THE VALUES FOR ALL VARIABLES HERE
 
+  t1 = datetime.now()
+
   # load obstructions
   obstructions = pd.read_csv(obs_file)
   obstructions = obstructions.to_numpy()
@@ -178,4 +180,8 @@ def generate_math_model(c_x, c_y, u, v, time_steps):
   plt.savefig('math model.png')
   print(f"\nMath Model - source=({c_x},{c_y}) u={u} v={v} t={time_steps}\n")
 
-  return math_fig
+  t2 = datetime.now()
+  delta = t2 - t1
+  ms = delta.total_seconds() * 1000
+  
+  return ms, math_fig
