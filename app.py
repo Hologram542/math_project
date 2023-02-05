@@ -13,35 +13,7 @@ st.write('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_h
 #Title
 st.markdown("<h1 style='text-align: center;font-size:20px;paddng-top:0rem;paddng-bottom:0rem;'>SIMPLE FLOW REGIME WITH CONSTANT ADVECTION VALUES </h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;paddng-bottom:0rem;'>(2D Advection Diffusion Pollution Spread Math Model and PINN) </h1>", unsafe_allow_html=True)
-st.markdown("""
-                <html>
-                    <head>
-                    <style>
-                        ::-webkit-scrollbar {
-                            height: 10px;
-                            width: 10px;
-                            }
 
-                            /* Track */
-                            ::-webkit-scrollbar-track {
-                            background: #f1f1f1;
-                            }
-
-                            /* Handle */
-                            ::-webkit-scrollbar-thumb {
-                            background: #888;
-                            }
-
-                            /* Handle on hover */
-                            ::-webkit-scrollbar-thumb:hover {
-                            background: #555;
-                            }
-                    </style>
-                    </head>
-                    <body>
-                    </body>
-                </html>
-            """, unsafe_allow_html=True)
 
 #Run the initial model
 #def run_initial_model(time_step, cx, cy, u, v):
@@ -249,6 +221,7 @@ with but_col4:
 # If the "ACCURACY SIMULATION" is pressed
 if accuracy_simulation:
 
+  st.clear()
   accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 # # If "RUN BOTH" is pressed
