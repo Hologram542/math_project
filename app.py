@@ -18,6 +18,7 @@ st.markdown("""
                     <head>
                     <style>
                         ::-webkit-scrollbar {
+                            height: 10px;
                             width: 10px;
                             }
 
