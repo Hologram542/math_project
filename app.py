@@ -114,13 +114,13 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   st.markdown("""<h1 style='text-align: center;font-size:18px;padding-top:0rem;'>PINN and Math Model Simulation for &nbsp;&nbsp; - &nbsp;&nbsp; time steps 100 to {0} ; &nbsp;&nbsp;&nbsp;&nbsp; Source of pollution cx = {1} cy = {2} ; &nbsp;&nbsp;&nbsp;&nbsp; Velocity u = {3} v = {4}</h1>""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown), unsafe_allow_html=True)
 
 
-  num_cols = ((time_step_dropdown)//100) + 2
+  num_cols = ((time_step_dropdown)//100) + 1
 
   initial_cols = st.columns(5)
   text_cols = st.columns(int(num_cols))
   pinn_cols = st.columns(int(num_cols))
   math_cols = st.columns(int(num_cols))
-  gif_cols = st.columns(6)
+  gif_cols = st.columns(2)
 
   #with initial_cols[2]:
   #  run_initial_model(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
@@ -147,7 +147,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   pinn_files = [globals()[f"pinn img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
   
   text_cols[num_cols - 1].markdown("<h1 style='text-align: center;font-size:15px'>ANIMATED GIF</h1>", unsafe_allow_html=True)
-  pinn_final = pinn_cols[num_cols - 1]
+  pinn_final = gif_cols[0]
   images_to_gif('pinn model.gif', pinn_files)
   pinn_final.image('pinn model.gif')
 
@@ -160,7 +160,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
 
-  math_final = math_cols[num_cols - 1]
+  math_final = gif_cols[1]
   images_to_gif('math model.gif', math_files)
   math_final.image('math model.gif')
 
