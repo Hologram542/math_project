@@ -234,6 +234,7 @@ if accuracy_simulation:
 
 if clear_results:
   st.stop()
+st.write("We stopped")
 
 
 
