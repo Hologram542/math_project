@@ -80,7 +80,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   for i, timesteps in enumerate(np.arange(100, time_step_dropdown + 1, 100)):
 
     
-    text_cols[i+1].markdown("<h1 style='text-align: center;font-size:15px'>{}</h1>".format(timesteps), unsafe_allow_html=True)
+    text_cols[i+1].markdown("<h1 style='text-align: center;font-size:15px;padding-top:0rem;padding-bottom:0rem;'>{}</h1>".format(timesteps), unsafe_allow_html=True)
 
     run_pinn_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     pinn_cols[i+1].image("pinn model.png")
