@@ -35,6 +35,7 @@ def custom_loss_wrapper(obstructions):
     return loss
   return custom_loss
 
+@jit(nopython=True)
 def generate_PINN_model(time, cx, cy,u,v):
   cx = scale(cx, 0, 100)
   cy = scale(cy, 0, 100)
