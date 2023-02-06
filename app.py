@@ -108,10 +108,10 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   
   pinn_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
   pinn_final.image('pinn model.gif')
-  pinn_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
+  pinn_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>Time to generate PINN model {str(round(pinn_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
   math_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>Ground Truth</h1>", unsafe_allow_html=True)
   math_final.image('math model.gif')
-  math_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
+  math_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>Time to generate math model {str(round(math_time, 3))} milliseconds</h1>", unsafe_allow_html=True)
 
   
 
