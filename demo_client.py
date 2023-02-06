@@ -29,13 +29,13 @@ def scale(num,min,max):
   num_scaled = (num-middle)/(max-middle)
   return num_scaled
 
+@jit(nopython=True)
 def custom_loss_wrapper(obstructions):
   def custom_loss(y_actual,y_pred):
     loss = K.mean(K.square(y_actual-y_pred))
     return loss
   return custom_loss
 
-@jit(nopython=True)
 def generate_PINN_model(time, cx, cy,u,v):
   cx = scale(cx, 0, 100)
   cy = scale(cy, 0, 100)
