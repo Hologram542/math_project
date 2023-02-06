@@ -165,7 +165,7 @@ if accuracy_simulation:
 if clear_results:
   st.write(clear_results)
   st.rerun()
-st.write("We stopped")
+# st.write("We stopped")
 
 
 
