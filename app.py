@@ -164,7 +164,7 @@ if accuracy_simulation:
   accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 
-if clear_results:
+# if clear_results:
   # st.write(clear_results)
   # st.rerun()
 
