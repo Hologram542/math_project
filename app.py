@@ -82,7 +82,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
     
     text_cols[i+1].markdown("<h1 style='text-align: center;font-size:15px;padding-top:0rem;padding-bottom:0rem;'>{}</h1>".format(timesteps), unsafe_allow_html=True)
 
-    run_pinn_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    pinn_time  = run_pinn_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     pinn_cols[i+1].image("pinn model.png")
 
     globals()[f"pinn img {timesteps}"] = imageio.imread("pinn model.png")
@@ -96,7 +96,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
 
   for i, timesteps in enumerate(np.arange(100, time_step_dropdown +1, 100)):
 
-    run_math_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
+    math_time  = run_math_model(timesteps, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
     math_cols[i+1].image("math model.png")
     globals()[f"math img {timesteps}"] = imageio.imread("math model.png")
 
@@ -108,8 +108,10 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   
   pinn_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
   pinn_final.image('pinn model.gif')
+  pinn_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
   math_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>Ground Truth</h1>", unsafe_allow_html=True)
   math_final.image('math model.gif')
+  math_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
 
   
 
@@ -163,7 +165,7 @@ if accuracy_simulation:
 
 
 if clear_results:
-  st.write(clear_results)
+  # st.write(clear_results)
   # st.rerun()
 
 
