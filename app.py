@@ -57,7 +57,7 @@ def images_to_gif(gif_name, files):
 def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown):
 
   # Add "Results" title
-  st.markdown("""<h1 style='text-align: center;font-size:25px'>Results</h1>""", unsafe_allow_html=True)
+  st.markdown("""<h1 style='text-align: center;font-size:25px;padding-top:0rem;'>Results</h1>""", unsafe_allow_html=True)
 
   #Show the input values
   st.markdown("""<h1 style='text-align: center;font-size:18px;padding-top:0rem;'>PINN and Math Model Simulation for &nbsp;&nbsp; - &nbsp;&nbsp; time steps 100 to {0} ; &nbsp;&nbsp;&nbsp;&nbsp; Source of pollution cx = {1} cy = {2} ; &nbsp;&nbsp;&nbsp;&nbsp; Velocity u = {3} v = {4}</h1>""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown), unsafe_allow_html=True)
@@ -111,6 +111,8 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   images_to_gif('math model.gif', math_files)
   math_final.image('math model.gif')
 
+  
+
 
 
 ## Dropdowns
@@ -126,14 +128,14 @@ with col1:
   cx_dropdown = st.selectbox("cx", np.arange(0, 110, 10), index = 6)
 
 with col2:
-#  cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
+
   u_dropdown = st.selectbox("u", np.arange(0.0, 5.5, 0.5), index = 6)
 
-#st.write("**Velocity in x and y directions**")
+
 col3, col4 = st.columns(2)
 
 with col3:
-#  u_dropdown = st.selectbox("u", np.arange(0.0, 5.5, 0.5), index = 6)
+
   cy_dropdown = st.selectbox("cy", np.arange(0, 110, 10), index = 6)
 with col4:
   v_dropdown = st.selectbox("v", np.arange(0.0, 5.5, 0.5), index = 4)
@@ -157,15 +159,12 @@ with but_col4:
 # If the "ACCURACY SIMULATION" is pressed
 if accuracy_simulation:
 
-  accuracy_simulation = False
-
   accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown)
 
 
 if clear_results:
   st.write(clear_results)
   # st.rerun()
-# st.write("We stopped")
 
 
 
