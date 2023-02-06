@@ -22,14 +22,13 @@ from datetime import datetime
 
 obs_file = "obstructions2d.csv"
 
-@jit(nopython=True)
 def scale(num,min,max):
   middle = (min+max)/2
   #value scaled = (value-middle)/(max-middle)
   num_scaled = (num-middle)/(max-middle)
   return num_scaled
 
-@jit(nopython=True)
+
 def custom_loss_wrapper(obstructions):
   def custom_loss(y_actual,y_pred):
     loss = K.mean(K.square(y_actual-y_pred))
