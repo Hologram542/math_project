@@ -60,7 +60,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   st.markdown("""<h1 style='text-align: center;font-size:25px;padding-top:0rem;'>Results</h1>""", unsafe_allow_html=True)
 
   #Show the input values
-  st.markdown("""<h1 style='text-align: center;font-size:18px;padding-top:0rem;'>PINN and Math Model Simulation for &nbsp;&nbsp; - &nbsp;&nbsp; time steps 100 to {0} ; &nbsp;&nbsp;&nbsp;&nbsp; Source of pollution cx = {1} cy = {2} ; &nbsp;&nbsp;&nbsp;&nbsp; Velocity u = {3} v = {4}</h1>""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown), unsafe_allow_html=True)
+  st.markdown("""<h1 style='text-align: center;font-size:18px;padding-top:0rem;padding-bottom:0rem;'>PINN and Math Model Simulation for &nbsp;&nbsp; - &nbsp;&nbsp; time steps 100 to {0} ; &nbsp;&nbsp;&nbsp;&nbsp; Source of pollution cx = {1} cy = {2} ; &nbsp;&nbsp;&nbsp;&nbsp; Velocity u = {3} v = {4}</h1>""".format(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v_dropdown), unsafe_allow_html=True)
 
 
   num_cols = ((time_step_dropdown)//100) + 1
