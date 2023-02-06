@@ -22,6 +22,7 @@ from datetime import datetime
 
 obs_file = "obstructions2d.csv"
 
+@jit(nopython=True)
 def scale(num,min,max):
   middle = (min+max)/2
   #value scaled = (value-middle)/(max-middle)
