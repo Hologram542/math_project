@@ -137,7 +137,7 @@ def generate_initial_model(c_x, c_y, u, v, time_steps):
 
   return initial_fig
 
-@jit(nopython=True)
+
 def generate_math_model(c_x, c_y, u, v, time_steps):
   #generate the math model
   # SPECIFY THE VALUES FOR ALL VARIABLES HERE
