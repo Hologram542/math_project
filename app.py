@@ -97,7 +97,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   
   
   pinn_final = gif_cols[0]
-  pinn_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
+  pinn_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>PINN MODEL</h1>", unsafe_allow_html=True)
   images_to_gif('pinn model.gif', pinn_files)
   pinn_final.image('pinn model.gif')
 
@@ -107,7 +107,7 @@ def accuracy_func_ui(time_step_dropdown, cx_dropdown, cy_dropdown, u_dropdown, v
   math_files = [globals()[f"math img {timesteps}"] for timesteps in range(100, time_step_dropdown + 100, 100)]
 
   math_final = gif_cols[1]
-  math_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;'>Ground Truth</h1>", unsafe_allow_html=True)
+  math_final.markdown("<h1 style='text-align: center;font-size:20px;padding-top:0rem;padding-bottom:0rem;'>Ground Truth</h1>", unsafe_allow_html=True)
   images_to_gif('math model.gif', math_files)
   math_final.image('math model.gif')
 
